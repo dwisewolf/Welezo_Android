@@ -7,4 +7,5 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="button_primary">#329F9E</color>
+    <color name="popupbckgrnd">#0A0C1E</color>
 </resources>

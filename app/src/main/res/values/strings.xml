@@ -13,4 +13,24 @@
     <string name="retype_email">Retype Email</string>
     <string name="your_email_phone_number">Your Email / Phone Number</string>
     <string name="resend">Resend</string>
+    <string name="ForgotPassword">Forgot Password</string>
+    <string name="send">Send</string>
+    <string name="i_accept_the">I accept the</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="and">and</string>
+    <string name="terms">Terms</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="name">Name</string>
+    <string name="your_email">Your Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="we_ve_just_sent_you_an_email_to">We’ve just sent you an email to</string>
+    <string name="girigajendra05_gmail_com">girigajendra05@gmail.com.</string>
+    <string name="please_check_your_email_and_activate_your_account">Please check your email and activate your account.</string>
+    <string name="we_go_through_this_process_to_your_security">We go through this process to your security.</string>
+    <string name="ok">OK</string>
+    <string name="i_haven_t_received_an_email">I haven’t received an email</string>
+    <string name="mailpic">mailpic</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="enter_your_otp">Enter your OTP</string>
+    <string name="submit">Submit</string>
 </resources>

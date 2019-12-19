@@ -1,5 +1,7 @@
 package com.welezohealth.welezo;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.VideoView;
@@ -22,11 +24,13 @@ public class SplashActitivty extends AppCompatActivity {
         ButterKnife.bind(this);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.hide();
 
         Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.logo_animation);
         videoView.setVideoURI(uri);
         videoView.start();
+        videoView.setOnCompletionListener(mp -> startActivity(new Intent(this,SignUp_Activity.class)));
 
     }
 }
