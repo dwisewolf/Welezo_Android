@@ -16,7 +16,7 @@
     <string name="ForgotPassword">Forgot Password</string>
     <string name="send">Send</string>
     <string name="i_accept_the">I accept the</string>
-    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy">\tPrivacy Policy</string>
     <string name="and">and</string>
     <string name="terms">Terms</string>
     <string name="already_have_an_account">Already have an account?</string>

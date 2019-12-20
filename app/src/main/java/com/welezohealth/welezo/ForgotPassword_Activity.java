@@ -59,15 +59,10 @@ public class ForgotPassword_Activity extends AppCompatActivity {
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         // dismiss the popup window when touched
-        popupView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                passwordPage.setAlpha((float) 1);
-
-                popupWindow.dismiss();
-
-                return true;
-            }
+        popupView.setOnTouchListener((v, event) -> {
+            passwordPage.setAlpha((float) 1);
+            popupWindow.dismiss();
+            return true;
         });
 
     }
