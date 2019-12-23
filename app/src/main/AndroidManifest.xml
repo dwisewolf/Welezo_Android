@@ -12,18 +12,20 @@
 
         <activity android:name=".OTP_Activity">
         </activity>
-        <activity android:name=".SignUp_Activity"/>
+        <activity android:name=".SignUp_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ForgotPassword_Activity"/>
 
         <activity android:name=".RetypeEmail_Activity" />
         <activity android:name=".NewPassword_Activity"/>
         <activity android:name=".Sign_in_Activity" />
         <activity android:name=".SplashActitivty">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
     </application>

@@ -1,12 +1,19 @@
 package com.welezohealth.welezo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -46,7 +53,8 @@ public class SignUp_Activity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.signup_button:
-                startActivity(new Intent(this, OTP_Activity.class));
+               // startActivity(new Intent(this, OTP_Activity.class));
+
                 break;
             case R.id.signin_btn:
                 startActivity(new Intent(this, Sign_in_Activity.class));

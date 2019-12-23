@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.ActionBar;
@@ -32,6 +33,13 @@ public class SplashActitivty extends AppCompatActivity {
         videoView.start();
         videoView.setOnCompletionListener(mp -> startActivity(new Intent(this,SignUp_Activity.class)));
 
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SplashActitivty.this,SignUp_Activity.class));
+            }
+        });
     }
+
 }
 //android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
