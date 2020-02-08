@@ -8,4 +8,6 @@
     <color name="black">#000000</color>
     <color name="button_primary">#329F9E</color>
     <color name="popupbckgrnd">#0A0C1E</color>
+    <color name="trans">#00FFFFFF</color>
+    <color name="grey">#7A7979</color>
 </resources>

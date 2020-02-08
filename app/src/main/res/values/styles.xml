@@ -7,14 +7,41 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="PopTheme" parent="Base.V21.Theme.AppCompat.Light.Dialog"/>
+
+    <style name="PopTheme" parent="Base.V21.Theme.AppCompat.Light.Dialog" />
 
     <style name="popup_window_animation">
         <item name="android:windowEnterAnimation">@anim/zoom_in</item>
         <item name="android:windowExitAnimation">@anim/zoom_out</item>
     </style>
+
     <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
-    <item name="android:textColor">@color/button_primary</item>
+        <item name="android:textColor">@color/button_primary</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="android:Theme.Holo.Light" >
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="elevation">0dp</item>
+        <item name="android:background">#329F9E</item>
+        <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="elevation">0dp</item>
+        <item name="android:background">#329F9E</item>
+        <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
+    </style>
+
+
+    <style name="DrawerHamburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+
+
+    </style>
 </resources>
