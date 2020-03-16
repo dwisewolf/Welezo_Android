@@ -1,6 +1,7 @@
 package com.welezohealth.welezo.ui.home;
 
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -27,18 +28,19 @@ import butterknife.BindView;
 public class HomeFragment extends Fragment {
 
     private CardView cardmenu;
-    private String setTop = "reset", setBottom = "reset", cardsetTop = "reset", cardsetBtm = "reset", grown = "";
+    private String setTop = "reset", setBottom = "reset", //status for the search options
+            cardsetTop = "reset", cardsetBtm = "reset",  //status for card (menus)
+            grown = "";
     @BindView(R.id.scroll_home)
     NestedScrollView scrollHome;
-    private OnscrollUpL onscrollUpL;
 
+    private OnscrollUpL onscrollUpL;
     private TextView nameText,searText1,searchText2,backg;
     private HomeViewModel homeViewModel;
 
     public HomeFragment() {
 
     }
-
 
     public interface OnscrollUpL {
 
@@ -51,9 +53,8 @@ public class HomeFragment extends Fragment {
         void Searchscrolldownn(String s);
     }
 
-
-    public View onCreateView(LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    @SuppressLint("RestrictedApi")
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         scrollHome = root.findViewById(R.id.scroll_home);
         cardmenu = root.findViewById(R.id.cardMEnu);
@@ -61,7 +62,6 @@ public class HomeFragment extends Fragment {
         searText1 = root.findViewById((R.id.search1));
         searchText2 = root.findViewById((R.id.search2));
         backg = root.findViewById((R.id.backg));
-
 
         nameText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,14 +171,11 @@ public class HomeFragment extends Fragment {
                     }
 
                     ValueAnimator anim = ValueAnimator.ofInt(backg.getMeasuredHeight(), backg.getMeasuredHeight() - 300);
-                    anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                        @Override
-                        public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            int val = (Integer) valueAnimator.getAnimatedValue();
-                            ViewGroup.LayoutParams layoutParams = backg.getLayoutParams();
-                            layoutParams.height = val;
-                            backg.setLayoutParams(layoutParams);
-                        }
+                    anim.addUpdateListener(valueAnimator -> {
+                        int val = (Integer) valueAnimator.getAnimatedValue();
+                        ViewGroup.LayoutParams layoutParams = backg.getLayoutParams();
+                        layoutParams.height = val;
+                        backg.setLayoutParams(layoutParams);
                     });
                     anim.setDuration(600);
                     anim.start();
@@ -218,7 +215,6 @@ public class HomeFragment extends Fragment {
             }
 
         });
-
 
         return root;
     }

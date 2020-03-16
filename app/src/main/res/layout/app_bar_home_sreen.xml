@@ -27,6 +27,14 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:orientation="horizontal">
+                <ImageView
+                    android:padding="2dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/hamb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/hamb" />
 
                 <TextView
                     android:visibility="invisible"
@@ -70,6 +78,17 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_home_sreen" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="55dp"
+        app:itemIconTint="#FFFF"
+        android:background="#FF333333"
+        app:menu="@menu/bottom_nav_items">
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -175,5 +194,16 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/fab_margin"
+        android:elevation="100dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@color/colorPrimary"
+        android:translationZ="100dp"
+        android:src="@drawable/welezo" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

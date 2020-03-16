@@ -82,7 +82,7 @@ public class OTP_Activity extends AppCompatActivity {
 
             /* Detect paste event and set first char */
             if (text.length() > 1)
-                text = String.valueOf(text.charAt(0)); // TODO: We can fill out other EditTexts
+                text = String.valueOf(text.charAt(0));
 
             editTexts[currentIndex].removeTextChangedListener(this);
             editTexts[currentIndex].setText(text);

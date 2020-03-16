@@ -46,7 +46,6 @@ public class SignUp_Activity extends AppCompatActivity {
         assert actionBar != null;
         actionBar.hide();
 
-
     }
 
     @OnClick({R.id.signup_button, R.id.signin_btn})

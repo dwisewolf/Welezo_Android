@@ -9,5 +9,8 @@
     <color name="button_primary">#329F9E</color>
     <color name="popupbckgrnd">#0A0C1E</color>
     <color name="trans">#00FFFFFF</color>
+    <color name="greytrans">#4D171717</color>
     <color name="grey">#7A7979</color>
+
+    <color name="sky_blue">#00BCD4</color>
 </resources>

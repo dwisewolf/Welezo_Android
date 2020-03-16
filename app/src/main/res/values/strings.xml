@@ -53,4 +53,11 @@
     <string name="travell">TRAVELL</string>
     <string name="wellness">WELLNESS</string>
     <string name="looking_for">looking for?</string>
+
+    <string name="package_images">package_images</string>
+    <string name="g">G</string>
+    <string name="_46">(46)</string>
+    <string name="_4999">$ 4999/-</string>
+    <string name="health_checkup">HEALTH CHECKUP</string>
+    <string name="share">share</string>
 </resources>

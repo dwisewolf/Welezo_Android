@@ -45,8 +45,6 @@ public class Sign_in_Activity extends AppCompatActivity {
         signInHead.setTypeface(roboto);
         usernameId.setTypeface(roboto);
         passwordId.setTypeface(roboto);
-
-
     }
 
     @OnClick({R.id.signin_id, R.id.forgot_id, R.id.sUP_id})
