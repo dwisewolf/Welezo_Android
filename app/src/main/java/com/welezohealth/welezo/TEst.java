@@ -27,7 +27,7 @@ public class TEst extends AppCompatActivity {
     List<BannerItems> bannerItems=new ArrayList<>();
 
     List<Model_RecentSearch> model_recentSearches=new ArrayList<>();
-    private RecyclerView recyclerView,recent_add_packageList;
+    private RecyclerView recyclerView,recent_add_packageList,packgage_long;
 
     List<Model_Recent_Add> model_recent_adds=new ArrayList<>();
 
@@ -63,6 +63,15 @@ public class TEst extends AppCompatActivity {
         LinearLayoutManager recent_add_package_adapterlayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recent_add_packageList.setLayoutManager(recent_add_package_adapterlayoutManager);
+
+        packgage_long=findViewById(R.id.packagelonglist);
+        PackageLong_Adapter packageLong_adapter=new
+                PackageLong_Adapter(model_recent_adds,packgage_long);
+        LinearLayoutManager packagelong_manager
+                = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        packgage_long.setLayoutManager(packagelong_manager);
+        packgage_long.setAdapter(packageLong_adapter);
+
 
         parseFragment();
 
