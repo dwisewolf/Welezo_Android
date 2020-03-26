@@ -53,7 +53,7 @@ holder.settext(searchItems.get(position));
         }
 
         void settext(Model_RecentSearch model_recentSearch){
-            searchCat.setText(model_recentSearch.getSearchKeys());
+            searchCat.setText(model_recentSearch.getSearchkeys());
         }
 
     }

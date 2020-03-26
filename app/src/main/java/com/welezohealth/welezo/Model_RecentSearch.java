@@ -1,13 +1,8 @@
 package com.welezohealth.welezo;
 
 public class Model_RecentSearch {
-    private  String searchKeys;
+    private String searchkeys;
 
-    public Model_RecentSearch(String searchKeys) {
-        this.searchKeys = searchKeys;
-    }
-
-    public  String getSearchKeys(){
-        return searchKeys;
-    }
+    public Model_RecentSearch(String searchkeys ){ this.searchkeys =searchkeys; }
+    public String getSearchkeys() { return searchkeys; }
 }

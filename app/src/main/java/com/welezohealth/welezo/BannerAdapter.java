@@ -56,3 +56,4 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.BannerView
         }
     }
 }
+

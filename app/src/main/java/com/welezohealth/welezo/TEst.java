@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -24,12 +25,14 @@ import java.util.List;
 public class TEst extends AppCompatActivity {
 
     private ViewPager2 viewPager2;
-    List<BannerItems> bannerItems=new ArrayList<>();
+    List<BannerItems> bannerItems = new ArrayList<>();
 
-    List<Model_RecentSearch> model_recentSearches=new ArrayList<>();
-    private RecyclerView recyclerView,recent_add_packageList,packgage_long;
+    List<Model_RecentSearch> model_recentSearches = new ArrayList<>();
+    private RecyclerView recyclerView, recent_add_packageList, packgage_long, topcheckupplans, topcheckupplans2, besthospitalPlans;
 
-    List<Model_Recent_Add> model_recent_adds=new ArrayList<>();
+    List<Model_Recent_Add> model_recent_adds = new ArrayList<>();
+
+    List<ModelHosp_Package> modelHosp_packages = new ArrayList<>();
 
 
     @Override
@@ -40,37 +43,53 @@ public class TEst extends AppCompatActivity {
         assert actionBar != null;
         actionBar.hide();
 
-        viewPager2=findViewById(R.id.viewPager);
-
-
+        viewPager2 = findViewById(R.id.viewPager);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabL);
+        viewPager2.setAdapter(new BannerAdapter(bannerItems, viewPager2));
 
-
-        viewPager2.setAdapter(new BannerAdapter(bannerItems,viewPager2));
-
-        recyclerView=findViewById(R.id.search_recycle);
-        RecentSearchAdapter adapter=new RecentSearchAdapter(model_recentSearches,recyclerView);
+        recyclerView = findViewById(R.id.search_recycle);
+        RecentSearchAdapter adapter = new RecentSearchAdapter(model_recentSearches, recyclerView);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
 
-        recent_add_packageList=findViewById(R.id.recent_add_PackageList);
-        Recent_Add_Package_Adapter recent_add_package_adapter=new
-                Recent_Add_Package_Adapter(model_recent_adds,recent_add_packageList);
+        recent_add_packageList = findViewById(R.id.recent_add_PackageList);
+        Recent_Add_Package_Adapter recent_add_package_adapter = new
+                Recent_Add_Package_Adapter(model_recent_adds, recent_add_packageList);
         recent_add_packageList.setAdapter(recent_add_package_adapter);
         LinearLayoutManager recent_add_package_adapterlayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recent_add_packageList.setLayoutManager(recent_add_package_adapterlayoutManager);
 
-        packgage_long=findViewById(R.id.packagelonglist);
-        PackageLong_Adapter packageLong_adapter=new
-                PackageLong_Adapter(model_recent_adds,packgage_long);
+        packgage_long = findViewById(R.id.packagelonglist);
+        PackageLong_Adapter packageLong_adapter = new
+                PackageLong_Adapter(model_recent_adds, packgage_long);
         LinearLayoutManager packagelong_manager
                 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         packgage_long.setLayoutManager(packagelong_manager);
         packgage_long.setAdapter(packageLong_adapter);
+
+        topcheckupplans = findViewById(R.id.top_cchekupplans_packages);
+        topcheckupplans2 = findViewById(R.id.top_cchekupplans_packages2);
+        LinearLayoutManager gridlayoutManager =
+                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        topcheckupplans.setLayoutManager(gridlayoutManager);
+        topcheckupplans.setAdapter(recent_add_package_adapter);
+
+        LinearLayoutManager gridlayoutManager2 =
+                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        topcheckupplans2.setLayoutManager(gridlayoutManager2);
+        topcheckupplans2.setAdapter(recent_add_package_adapter);
+
+        besthospitalPlans = findViewById(R.id.best_hospital_plans);
+        CenterZoomLayoutManager besthospitalPlans_manager
+                = new CenterZoomLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        Hospital_Packg_Adapter hospital_packg_adapter = new
+                Hospital_Packg_Adapter(modelHosp_packages, besthospitalPlans);
+        besthospitalPlans.setLayoutManager(besthospitalPlans_manager);
+        besthospitalPlans.setAdapter(hospital_packg_adapter);
 
 
         parseFragment();
@@ -91,17 +110,16 @@ public class TEst extends AppCompatActivity {
             try {
                 JSONObject obj = new JSONObject(loadrecent_add_packageListCreationJSONFromAsset());
 
-                    // Log.d("Details-->", jo_inside.getString("formule"));
-for (int i=0;i<=5;i++) {
-    String Title = obj.getString("Tests");
-    String Rating = obj.getString("Rating");
-    String Price = obj.getString("Price");
-    //String PackagesId = obj.getString("PackagesId");
+                // Log.d("Details-->", jo_inside.getString("formule"));
+                for (int i = 0; i <= 5; i++) {
+                    String Title = obj.getString("Tests");
+                    String Rating = obj.getString("Rating");
+                    String Price = obj.getString("Price");
+                    //String PackagesId = obj.getString("PackagesId");
+                    modelHosp_packages.add(new ModelHosp_Package(Title, "https://static01.nyt.com/images/2020/02/02/business/02up-payless-illo/02up-payless-illo-facebookJumbo.jpg", Integer.valueOf(Rating)));
 
-    model_recent_adds.add(new Model_Recent_Add(Title, "$ "+Price, Rating, Rating,"("+Rating+")", "https://static01.nyt.com/images/2020/02/02/business/02up-payless-illo/02up-payless-illo-facebookJumbo.jpg"
-
-    ));
-}
+                    model_recent_adds.add(new Model_Recent_Add(Title, "$ " + Price, Rating, Rating, "(" + Rating + ")", "https://static01.nyt.com/images/2020/02/02/business/02up-payless-illo/02up-payless-illo-facebookJumbo.jpg"));
+                }
 
 
             } catch (JSONException e) {
@@ -112,19 +130,19 @@ for (int i=0;i<=5;i++) {
 
     private String loadrecent_add_packageListCreationJSONFromAsset() {
 
-            String json = null;
-            try {
-                InputStream is = getApplicationContext().getAssets().open("package.json");
-                int size = is.available();
-                byte[] buffer = new byte[size];
-                is.read(buffer);
-                is.close();
-                json = new String(buffer, "UTF-8");
-            } catch (IOException ex) {
-                ex.printStackTrace();
-                return null;
-            }
-            return json;
+        String json = null;
+        try {
+            InputStream is = getApplicationContext().getAssets().open("package.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
 
 
     }
@@ -152,8 +170,6 @@ for (int i=0;i<=5;i++) {
                 model_recentSearches.add(new Model_RecentSearch(author));
 
 
-
-
                 //Add your values in your `ArrayList` as below:
                 m_li = new HashMap<String, String>();
 
@@ -168,7 +184,6 @@ for (int i=0;i<=5;i++) {
 
                 m_li.put("content", content);
                 m_li.put("author", author);
-
 
 
                 formList.add(m_li);

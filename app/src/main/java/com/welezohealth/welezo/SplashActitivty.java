@@ -44,3 +44,5 @@ public class SplashActitivty extends AppCompatActivity {
 }
 
 //android:theme="@android:style/Theme.NoTitleBar.Fullscreen"wwwwwwwww
+
+

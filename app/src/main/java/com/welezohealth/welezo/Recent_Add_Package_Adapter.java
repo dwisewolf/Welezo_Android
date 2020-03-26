@@ -90,3 +90,4 @@ holder.set(recent_adds.get(position));
     private class OnItemClickListner {
     }
 }
+

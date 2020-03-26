@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ivory">
 
     <ScrollView
+        android:background="@color/ivory"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,9 +19,10 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
 
+                android:background="@color/ivory"
                 android:layout_width="match_parent"
                 android:layout_height="3000dp"
-                android:background="@color/white">
+                 >
 
 
                 <androidx.viewpager2.widget.ViewPager2
@@ -138,8 +141,9 @@
                     android:id="@+id/textView11"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginBottom="8dp"
+
                     android:gravity="center"
+                    android:background="@color/ivory"
                     android:text="Recent Search"
                     android:textColor="@color/grey"
                     app:layout_constraintBottom_toTopOf="@+id/guideline20"
@@ -154,6 +158,7 @@
                     android:id="@+id/search_recycle"
                     android:layout_width="0dp"
 
+                    android:background="@color/ivory"
                     android:layout_height="0dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/guideline20"
@@ -187,6 +192,7 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="16dp"
 
+                    android:background="@color/ivory"
                     android:layout_marginEnd="16dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toTopOf="@+id/guideline22"
@@ -275,7 +281,17 @@
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.16" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/best_hospital_plans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
                 <TextView
+                    android:background="@color/ivory"
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -306,7 +322,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.18" />
+                    app:layout_constraintGuide_percent="0.175" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -318,6 +334,8 @@
                     app:layout_constraintTop_toTopOf="@+id/guideline23">
 
                     <Button
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
                         android:id="@+id/button5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -327,21 +345,23 @@
                         android:text="All" />
 
                     <Button
+                        android:textSize="10sp"
                         android:id="@+id/button4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/rect_rounded_grey"
+                        android:background="@drawable/curvebutton"
                         android:text="Best Sale" />
 
                     <Button
+                        android:textSize="10sp"
                         android:id="@+id/button3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/rect_rounded_grey"
+                        android:background="@drawable/curvebutton"
                         android:text="Brands" />
                 </LinearLayout>
 
@@ -368,10 +388,41 @@
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.25" />
 
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:text="Best Hospital CheckUp"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/top_cchekupplans_packages2" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/top_cchekupplans_packages2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/top_cchekupplans_packages" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/top_cchekupplans_packages"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/top_chekup_list" />
+
                 <Button
                     android:id="@+id/button6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
                     android:background="@drawable/rect_shape_greyoutline_corner"
                     android:elevation="303dp"
                     android:text="@string/see_all"
@@ -407,17 +458,19 @@
                             android:layout_weight="1"
                             android:elevation="303dp"
                             android:text="Top Rated"
-                            android:background="@drawable/rect_shape_rounded"
+                            android:padding="15dp"
+
                             android:textColor="@color/black"
                             android:textSize="22sp" />
 
                         <TextView
+
                             android:textColor="@color/black"
                             android:textSize="22sp"
                             android:id="@+id/textView23"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:padding="15dp"
                             android:layout_margin="20dp"
                             android:layout_weight="1"
                             android:elevation="303dp"
@@ -425,23 +478,25 @@
                             />
 
                         <TextView
+
                             android:id="@+id/textView22"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:layout_margin="20dp"
                             android:layout_weight="1"
-
+                            android:padding="15dp"
                             android:elevation="303dp"
                             android:text="Rating and Reviews"
                             android:textColor="@color/black"
                             android:textSize="22sp" />
 
                         <TextView
+
                             android:id="@+id/textView21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:padding="15dp"
                             android:layout_margin="20dp"
                             android:layout_weight="1"
 
@@ -451,10 +506,11 @@
                             android:textSize="22sp" />
 
                         <TextView
+
                             android:id="@+id/textView20"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
+                            android:padding="15dp"
                             android:layout_margin="20dp"
                             android:layout_weight="1"
 
@@ -469,7 +525,7 @@
                     android:id="@+id/packagelong_card"
                     android:layout_width="match_parent"
                     android:layout_height="820dp"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="2dp"
                     app:cardPreventCornerOverlap="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -482,6 +538,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:layout_weight=".20"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
@@ -491,14 +548,15 @@
                             app:layout_constraintTop_toTopOf="@+id/guideline23">
 
                             <Button
+
                                 android:id="@+id/button5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="15dp"
-
                                 android:layout_weight="1"
                                 android:background="@drawable/rect_rounded_green"
-                                android:text="All" />
+                                android:text="All"
+                                android:textColor="@color/white" />
 
 
                             <Button
@@ -513,6 +571,7 @@
                         </LinearLayout>
 
                         <androidx.recyclerview.widget.RecyclerView
+                            android:layout_weight=".80"
                             android:id="@+id/packagelonglist"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" />

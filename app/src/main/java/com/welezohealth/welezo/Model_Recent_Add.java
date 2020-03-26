@@ -1,5 +1,7 @@
 package com.welezohealth.welezo;
 
+import android.os.Bundle;
+
 public class Model_Recent_Add {
     private String package_head;
     private String amont;
@@ -42,3 +44,4 @@ public class Model_Recent_Add {
         return total_reviews;
     }
 }
+
